@@ -50,36 +50,10 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
         {/* Mobile toggle */}
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="text-foreground">
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-nav border-t border-border/50 overflow-hidden"
-          >
-            <div className="section-container py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+     
     </motion.nav>
   );
 }
