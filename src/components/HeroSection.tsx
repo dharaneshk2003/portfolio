@@ -135,7 +135,7 @@ export default function HeroSection() {
               </div>
               {/* Floating badge */}
               <motion.div
-                animate={{ y: [-5, 5, -5] }}
+                animate={{ y: window.innerWidth >= 640 ? [-5, 5, -5] : 0 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 glass-card px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg"
               >
