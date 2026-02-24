@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Eye, FolderOpen, Github, Linkedin, Mail } from "lucide-react";
+import { Eye, FolderOpen, Github, Linkedin, Mail } from "lucide-react";
 import { portfolioData } from "@/data/portfolio-data";
 import profilePhoto from "@/assets/profile-photo.jpeg";
 import { useState } from "react";
@@ -137,30 +137,15 @@ export default function HeroSection() {
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -right-4 glass-card px-4 py-2 shadow-lg"
+                className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 glass-card px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg"
               >
-                <span className="font-mono text-sm text-primary">{'<Let\'s Connect/>'}</span>
+                <span className="font-mono text-xs sm:text-sm text-primary whitespace-nowrap">{'<Let\'s Connect/>'}</span>
               </motion.div>
             </div>
           </motion.div>
         </div>
 
         <ResumeDialog open={resumeOpen} onOpenChange={setResumeOpen} />
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ArrowDown className="w-5 h-5 text-muted-foreground" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
